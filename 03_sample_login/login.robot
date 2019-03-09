@@ -7,6 +7,12 @@ ${WEB_URL_PAGE}         https://js-main.demo.jomsocial.com/administrator/index.p
 ${BROWSER}              chrome
 &{CREDENTIALS}  username=demo    password=demo
 
+*** Keywords ***
+LoginKeyword
+    Input Text                      id=mod-login-username       &{CREDENTIALS}[username]
+    Input Password                  id=mod-login-password       &{CREDENTIALS}[password]
+    Click Button                    xpath=//*[@id="form-login"]/fieldset/div[3]/div/div/button
+
 *** Test Case ***
 MyFirstTest
     Log     Hello World...
@@ -14,9 +20,7 @@ MyFirstTest
 SampleLoginTest
     [Documentation]                 This is a sample login test
     Open Browser                    ${WEB_URL_PAGE}             ${BROWSER}
-    Input Text                      id=mod-login-username       &{CREDENTIALS}[username]
-    Input Password                  id=mod-login-password       &{CREDENTIALS}[password]
-    Click Button                    xpath=//*[@id="form-login"]/fieldset/div[3]/div/div/button
+    LoginKeyword
     Click Element                   class=icon-user
     Click Element                   link=Logout
     Close Browser
