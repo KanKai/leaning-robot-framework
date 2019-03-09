@@ -1,0 +1,6 @@
+[Structure]
+*** Settings ***
+*** Variables ***
+*** Keywords ***
+*** Test Cases ***
+
