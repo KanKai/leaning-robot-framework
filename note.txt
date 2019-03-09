@@ -1,6 +1,26 @@
 [Structure]
 *** Settings ***
+ไว้สําหรับ import library กับ resources file ต่างๆ รวมถึงการตั้ง teardown อื่นๆไว้
+
 *** Variables ***
+สร้างตัวแปรไว้ใช้ใน test cases ต่างๆ
+
 *** Keywords ***
+สร้าง keyword เก็บไว้เพื่อใช้ในการเขียน test cases ต่างๆ
+
 *** Test Cases ***
+เป็นส่วน test cases ที่ทํารวบรวมข้อมูลทั้งหมดที่เราตั้งค่าไว้ โดย test cases จะถูกสร้างขึ้นพร้อม acceptance จากลูกค้า หรือ product manager
+
+[Data Type]
+Scalar = ${}
+Scalar ก็เทียบได้กับตัวแปรประเภท String เช่น ${data}  teststring
+
+List = @{} 
+List ก็เหมือน Array เช่น @{list} a b c
+
+Dictionary = &{}
+Dictionary ก็ Key-Value ทั่วไป เช่น &{dict} key1=value1 key2=value2
+
+Enviroment = %{}
+Enviroment เป็นตัวแปรของระบบ เช่น %{JAVA_HOME} , %{USER}
 
