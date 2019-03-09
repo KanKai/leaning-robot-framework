@@ -20,6 +20,9 @@ src/robotframework.egg-info
 01_starter/log.html
 01_starter/output.xml
 01_starter/report.html
+02_action/log.html
+02_action/output.xml
+02_action/report.html
 log.html
 output.xml
 report.html
