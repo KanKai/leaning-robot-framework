@@ -5,6 +5,7 @@ Library         Selenium2Library
 ${WEB_PAGE_HOME}        https://www.google.com
 ${WEB_URL_PAGE}         https://js-main.demo.jomsocial.com/administrator/index.php
 ${BROWSER}              chrome
+&{CREDENTIALS}  username=demo    password=demo
 
 *** Test Case ***
 MyFirstTest
@@ -13,8 +14,8 @@ MyFirstTest
 SampleLoginTest
     [Documentation]                 This is a sample login test
     Open Browser                    ${WEB_URL_PAGE}             ${BROWSER}
-    Input Text                      id=mod-login-username       demo
-    Input Password                  id=mod-login-password       demo
+    Input Text                      id=mod-login-username       &{CREDENTIALS}[username]
+    Input Password                  id=mod-login-password       &{CREDENTIALS}[password]
     Click Button                    xpath=//*[@id="form-login"]/fieldset/div[3]/div/div/button
     Click Element                   class=icon-user
     Click Element                   link=Logout
