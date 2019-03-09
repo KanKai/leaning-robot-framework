@@ -1,6 +1,13 @@
 *** Settings ***
 Library         Selenium2Library
 
+Suite Setup     Log     I am inside Test Suite Setup
+Suite Teardown  Log     I am inside Test Suite Teardown
+Test Setup      Log     I am inside Test Setup
+Test Teardown   Log     I am inside Test Teardown
+
+Default Tags    sanity
+
 *** Variable ***
 ${WEB_PAGE_HOME}        https://www.google.com
 ${WEB_URL_PAGE}         https://js-main.demo.jomsocial.com/administrator/index.php
@@ -15,6 +22,7 @@ LoginKeyword
 
 *** Test Case ***
 MyFirstTest
+    [Tags]  smoke
     Log     Hello World...
 
 SampleLoginTest

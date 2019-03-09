@@ -24,3 +24,20 @@ Dictionary ก็ Key-Value ทั่วไป เช่น &{dict} key1=value1 
 Enviroment = %{}
 Enviroment เป็นตัวแปรของระบบ เช่น %{JAVA_HOME} , %{USER}
 
+การใช้งาน TC/TS
+TC SetUp    -   ทำงานก่อนทุกครั้ง
+TC Teardown -   จะทำงานหลังจากทุก ๆ TC ทำงานหมดแล้ว
+TS SetUP    -   จะทำงานก่อน TS ทั้งหมด
+TS Teardown -   จะทำงานหลังจาก TS ทุกตัวทำงานหมดแล้ว
+
+การใช้ Tags
+ข้อดี คือ เราสามารถเลือก run ทดสอบเฉพาะ tags นั้น ๆ ได้
+ตัวอย่าง cmd ทดสอบเฉพาะ tags
+
+$ robot -i sanity ....robotfile
+
+ถ้าต้องการทดสอบมากกว่า 1 tags
+
+$ robot -i sanity -i smoke ....robotfile
+
+
